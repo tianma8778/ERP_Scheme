@@ -1,0 +1,124 @@
+﻿@*@model JJY.WCF.Entity.SystemManage.ILSUser*@
+
+<script src="~/Scripts/JS/common.js" type="text/javascript"></script>
+<script src="~/Scripts/Frame/application.js" type="text/javascript"></script>
+<script type="text/javascript" language="JavaScript">
+    //Ext.Ajax.on('requestexception', function (conn, response, options) {
+    //    if (response.status == "444") {
+    //        Ext.Msg.alert('提示', '会话超时，请重新登录!', function () {
+    //            window.top.location.href = '/Home/Login';
+    //        });
+    //    }
+    //});
+    //var Rights;
+    var user_name = '@Model.Username';
+    var timer, flag = true;
+    //var picUrl ;
+    //Ext.Ajax.request(
+    //    {
+    //        url: '/Home/GetPicUrl',
+    //        async: false,
+    //        success: function (response) {
+    //            var ro = Ext.JSON.decode(response.responseText);
+    //            picUrl = ro;
+
+    //        }
+    //    }
+    //    );
+    //Ext.Ajax.request({
+    //    url: '/Home/GetRights',
+    //    async:false,
+    //    success: function (response) {
+    //        var ro = Ext.JSON.decode(response.responseText);
+    //        window.Rights = ro;
+
+    //    }
+    //});
+
+    //console.log(window.Rights.R1040106);
+    //为form表单中必填项添加红色*号标志
+    Ext.override(Ext.form.field.Base, {
+        //针对form中的基本组件 　　
+        initComponent: function () {
+            if (this.allowBlank !== undefined && !this.allowBlank) {
+                if (this.fieldLabel) {
+                    this.fieldLabel += '<font color=red>*</font>';
+                }
+            }
+            this.callParent(arguments);
+
+        }
+    });
+
+
+    function stop() {
+        return false;
+    }
+    document.oncontextmenu = stop;
+
+
+    Ext.getDoc().on('keydown', function (e) {
+        if (e.getKey() == 8 && e.getTarget().type == 'text' && !e.getTarget().readOnly) {
+
+        } else if (e.getKey() == 8 && e.getTarget().type == 'textarea' && !e.getTarget().readOnly) {
+
+        }
+        else if (e.getKey() == 8 && e.getTarget().type == 'password' && !e.getTarget().readOnly) {
+
+        }
+        else if (e.getKey() == 8) {
+            e.preventDefault();
+        }
+    });
+
+    
+    function dotran(str) {
+
+        str.DIV1 = "";
+        str.DIV2 = "";
+        str.DIV3 = "";
+        str.DIV4 = "";
+        str.DIV5 = "";
+        str.DIV6 = "";
+        str.DIV7 = "";
+        str.DIV8 = "";
+        return str;
+    }
+
+</script>
+<style type="text/css">
+    tr.x-grid-record-text-red .x-grid-td {
+        color: red;
+        /*background: RED;*/
+    }
+
+    tr.x-grid-record-text-green .x-grid-td {
+        color: green;
+        /*background: GREEN;*/
+    }
+
+
+    tr.x-grid-record-bg-gray .x-grid-td {
+        background-color: #E0FFFF;
+        background-image: none;
+        font:bold
+    }
+
+    .x-grid3-row td, .x-grid3-summary-row td {
+        line-height: 25px;
+        /*控制GRID单元格高度*/
+        vertical-align: center;
+        /*单元格垂直居中*/
+        border-right: 1px solid #eceff6 !important;
+        /*控制表格列线*/
+        border-top: 1px solid #eceff6 !important;
+        /*控制表格行线;*/
+    }
+
+    .x-grid-cell-action-col1 {
+        font-size: 12px;
+        line-height: 25px;
+    }
+</style>
+
+

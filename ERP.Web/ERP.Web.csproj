@@ -1,0 +1,1345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F52AA0A4-032E-4FEA-ABED-84AD6D435DD0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web</RootNamespace>
+    <AssemblyName>Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\SystemSetting\UserController.cs" />
+    <Compile Include="DTO\ReturnObject.cs" />
+    <Compile Include="DTO\ExtTreeDto.cs" />
+    <Compile Include="DTO\ExtGridReturnObject.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DTO\SingleReturnObject.cs" />
+    <Compile Include="Framework\DataFormatJsonResult.cs" />
+    <Compile Include="Security\AuthorizedUser.cs" />
+    <Compile Include="Security\UserAuthorizeAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\images\bg-button.png" />
+    <Content Include="Content\images\exit.png" />
+    <Content Include="Content\images\key.png" />
+    <Content Include="Content\images\log.png" />
+    <Content Include="Content\images\login-buttom-bg.gif" />
+    <Content Include="Content\images\login-content-bg.gif" />
+    <Content Include="Content\images\login-top-bg.gif" />
+    <Content Include="Content\images\login-wel.gif" />
+    <Content Include="Content\images\login_bg.jpg" />
+    <Content Include="Content\images\login_button.png" />
+    <Content Include="Content\images\logo.gif" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\luck.gif" />
+    <Content Include="Content\images\mouse_over.png" />
+    <Content Include="Content\images\top-right.gif" />
+    <Content Include="Content\images\top-right.png" />
+    <Content Include="Content\images\User1.png" />
+    <Content Include="Content\skin.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="log4net.cfg.xml" />
+    <Content Include="Scripts\BasicData\GeneralParameter\controller\GeneralParameterController.js" />
+    <Content Include="Scripts\Frame\view\Viewport1.js" />
+    <Content Include="Scripts\Frame\view\Viewport2.js" />
+    <Content Include="Scripts\JS\Ext.js" />
+    <Content Include="Scripts\SystemSetting\LimitManager\controller\LimitController.js" />
+    <Content Include="Scripts\SystemSetting\OrganizationManager\controller\OrgController.js" />
+    <Content Include="Scripts\SystemSetting\RoleManager\controller\RoleController.js" />
+    <Content Include="Scripts\SystemSetting\UserManager\controller\UserController.js" />
+    <Content Include="Scripts\Ext\ext-all-debug-w-comments.js" />
+    <Content Include="Scripts\Ext\ext-all.js" />
+    <Content Include="Scripts\Ext\locale\ext-lang-en.js" />
+    <Content Include="Scripts\Ext\locale\ext-lang-zh_CN.js" />
+    <Content Include="Scripts\Ext\resources\css\ext-all.css" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\ext-theme-classic-all.css" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\boundlist\trigger-arrow.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\box\corners-blue.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\box\corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\box\l-blue.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\box\l.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\box\r-blue.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\box\r.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\box\tb-blue.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\box\tb.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn-group\btn-group-default-framed-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn-group\btn-group-default-framed-notitle-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn-group\btn-group-default-framed-notitle-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn-group\btn-group-default-framed-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-large-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-large-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-large-disabled-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-large-disabled-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-large-disabled-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-large-disabled-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-large-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-large-focus-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-large-focus-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-large-focus-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-large-focus-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-large-over-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-large-over-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-large-over-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-large-over-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-large-pressed-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-large-pressed-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-large-pressed-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-large-pressed-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-large-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-medium-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-medium-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-medium-disabled-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-medium-disabled-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-medium-disabled-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-medium-disabled-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-medium-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-medium-focus-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-medium-focus-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-medium-focus-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-medium-focus-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-medium-over-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-medium-over-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-medium-over-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-medium-over-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-medium-pressed-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-medium-pressed-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-medium-pressed-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-medium-pressed-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-medium-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-small-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-small-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-small-disabled-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-small-disabled-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-small-disabled-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-small-disabled-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-small-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-small-focus-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-small-focus-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-small-focus-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-small-focus-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-small-over-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-small-over-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-small-over-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-small-over-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-small-pressed-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-small-pressed-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-small-pressed-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-small-pressed-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-small-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-large-disabled-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-large-disabled-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-large-focus-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-large-focus-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-large-focus-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-large-focus-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-large-over-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-large-over-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-large-over-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-large-over-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-large-pressed-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-large-pressed-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-large-pressed-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-large-pressed-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-medium-disabled-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-medium-disabled-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-medium-focus-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-medium-focus-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-medium-focus-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-medium-focus-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-medium-over-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-medium-over-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-medium-over-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-medium-over-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-medium-pressed-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-medium-pressed-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-medium-pressed-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-medium-pressed-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-small-disabled-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-small-disabled-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-small-focus-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-small-focus-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-small-focus-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-small-focus-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-small-over-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-small-over-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-small-over-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-small-over-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-small-pressed-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-small-pressed-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-small-pressed-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\btn\btn-default-toolbar-small-pressed-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\button\arrow.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\button\btn.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\button\group-cs.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\button\group-lr.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\button\group-tb.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\button\s-arrow-b-noline.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\button\s-arrow-b.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\button\s-arrow-bo.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\button\s-arrow-light-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\button\s-arrow-light.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\button\s-arrow-noline-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\button\s-arrow-noline.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\button\s-arrow-o-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\button\s-arrow-o.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\button\s-arrow-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\button\s-arrow.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\datepicker\datepicker-footer-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\datepicker\datepicker-header-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\dd\drop-add.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\dd\drop-no.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\dd\drop-yes.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\editor\tb-sprite.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\form\checkbox.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\form\clear-trigger-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\form\clear-trigger.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\form\date-trigger-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\form\date-trigger.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\form\error-tip-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\form\exclamation.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\form\radio.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\form\search-trigger-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\form\search-trigger.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\form\spinner-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\form\spinner-small-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\form\spinner-small.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\form\spinner.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\form\text-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\form\trigger-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\form\trigger-square-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\form\trigger-square.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\form\trigger-tpl-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\form\trigger-tpl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\form\trigger.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid-row-editor-buttons\grid-row-editor-buttons-default-bottom-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid-row-editor-buttons\grid-row-editor-buttons-default-bottom-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid-row-editor-buttons\grid-row-editor-buttons-default-top-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid-row-editor-buttons\grid-row-editor-buttons-default-top-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\arrow-left-white.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\arrow-right-white.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\cell-special-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\cell-special-bg.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\cell-special-selected-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\cell-special-selected-bg.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\col-move-bottom.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\col-move-top.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\column-header-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\column-header-over-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\columns.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\dd-insert-arrow-left.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\dd-insert-arrow-left.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\dd-insert-arrow-right.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\dd-insert-arrow-right.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\dirty-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\dirty.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\done.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\drop-no.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\drop-yes.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\footer-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\grid-blue-hd.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\grid-blue-split.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\grid-hrow.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\grid-loading.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\grid-split.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\grid-vista-hd.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\grid3-hd-btn-left.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\grid3-hd-btn.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\grid3-hrow-over.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\grid3-hrow.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\grid3-rowheader.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\group-by.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\group-collapse.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\group-expand-sprite.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\group-expand.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\hd-pop.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\hmenu-asc.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\hmenu-desc.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\hmenu-lock.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\hmenu-lock.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\hmenu-unlock.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\hmenu-unlock.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\invalid_line.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\loading.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\mso-hd.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\nowait.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\page-first-disabled.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\page-first.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\page-last-disabled.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\page-last.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\page-next-disabled.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\page-next.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\page-prev-disabled.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\page-prev.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\pick-button.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\property-cell-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\property-cell-selected-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\refresh-disabled.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\refresh.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\row-check-sprite.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\row-expand-sprite.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\row-over.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\row-sel.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\sort-hd.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\sort_asc.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\sort_desc.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\grid\wait.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\layout\mini-bottom.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\layout\mini-left.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\layout\mini-right.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\layout\mini-top.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\menu\checked.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\menu\group-checked.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\menu\item-over.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\menu\menu-item-active-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\menu\menu-parent-left.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\menu\menu-parent.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\menu\menu.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\menu\scroll-bottom.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\menu\scroll-top.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\menu\unchecked.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-bottom-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-bottom-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-bottom-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-bottom-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-bottom-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-bottom-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-bottom-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-bottom-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-bottom-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-left-bg-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-left-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-left-corners-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-left-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-left-fbg-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-left-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-left-sides-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-left-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-right-bg-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-right-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-right-corners-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-right-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-right-fbg-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-right-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-right-sides-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-right-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-top-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-top-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-top-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-collapsed-top-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-left-bg-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-left-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-left-corners-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-left-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-left-fbg-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-left-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-left-sides-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-left-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-right-bg-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-right-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-right-corners-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-right-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-right-fbg-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-right-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-right-sides-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-right-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-top-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-top-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-top-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-framed-top-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-left-bg-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-left-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-right-bg-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-right-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel-header\panel-header-default-top-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel\panel-default-framed-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\panel\panel-default-framed-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\progress\progress-default-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\shared\blue-loading.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\shared\calendar.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\shared\glass-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\shared\hd-sprite.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\shared\icon-error.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\shared\icon-info.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\shared\icon-question.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\shared\icon-warning.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\shared\large-loading.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\shared\left-btn.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\shared\loading-balls.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\shared\right-btn.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\shared\shadow-c.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\shared\shadow-lr.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\shared\shadow.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\shared\warning.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\sizer\e-handle-dark.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\sizer\e-handle.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\sizer\ne-handle-dark.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\sizer\ne-handle.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\sizer\nw-handle-dark.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\sizer\nw-handle.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\sizer\s-handle-dark.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\sizer\s-handle.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\sizer\se-handle-dark.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\sizer\se-handle.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\sizer\square.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\sizer\sw-handle-dark.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\sizer\sw-handle.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\slider\slider-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\slider\slider-bg.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\slider\slider-thumb.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\slider\slider-thumb.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\slider\slider-v-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\slider\slider-v-bg.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\slider\slider-v-thumb.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\slider\slider-v-thumb.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab-bar\default-scroll-bottom-left.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab-bar\default-scroll-bottom-right.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab-bar\default-scroll-left-bottom.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab-bar\default-scroll-left-top.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab-bar\default-scroll-right-bottom.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab-bar\default-scroll-right-top.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab-bar\default-scroll-top-left.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab-bar\default-scroll-top-right.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab-bar\tab-bar-default-bottom-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab-bar\tab-bar-default-left-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab-bar\tab-bar-default-right-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab-bar\tab-bar-default-top-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-bottom-active-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-bottom-active-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-bottom-active-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-bottom-active-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-bottom-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-bottom-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-bottom-disabled-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-bottom-disabled-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-bottom-disabled-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-bottom-disabled-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-bottom-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-bottom-over-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-bottom-over-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-bottom-over-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-bottom-over-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-bottom-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-close.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-top-active-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-top-active-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-top-active-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-top-active-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-top-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-top-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-top-disabled-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-top-disabled-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-top-disabled-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-top-disabled-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-top-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-top-over-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-top-over-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-top-over-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-top-over-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tab\tab-default-top-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tip\tip-default-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tip\tip-default-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tip\tip-form-invalid-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tip\tip-form-invalid-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\toolbar\more-left.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\toolbar\more.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\toolbar\scroll-left.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\toolbar\scroll-right.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\toolbar\toolbar-default-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tools\tool-sprite-tpl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tools\tool-sprites.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tools\tools-sprites-trans.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\arrows-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\arrows.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\drop-above.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\drop-add.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\drop-append.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\drop-below.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\drop-between.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\drop-no.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\drop-over.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\drop-under.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\drop-yes.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\elbow-end-minus-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\elbow-end-minus.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\elbow-end-plus-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\elbow-end-plus.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\elbow-end-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\elbow-end.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\elbow-line-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\elbow-line.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\elbow-minus-nl-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\elbow-minus-nl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\elbow-minus-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\elbow-minus.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\elbow-plus-nl-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\elbow-plus-nl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\elbow-plus-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\elbow-plus.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\elbow-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\elbow.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\folder-open-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\folder-open.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\folder-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\folder.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\leaf-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\leaf.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\loading.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\tree\s.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\util\splitter\mini-bottom.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\util\splitter\mini-left.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\util\splitter\mini-right.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\util\splitter\mini-top.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\window-header\window-header-default-bottom-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\window-header\window-header-default-bottom-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\window-header\window-header-default-collapsed-bottom-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\window-header\window-header-default-collapsed-bottom-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\window-header\window-header-default-collapsed-left-corners-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\window-header\window-header-default-collapsed-left-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\window-header\window-header-default-collapsed-left-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\window-header\window-header-default-collapsed-right-corners-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\window-header\window-header-default-collapsed-right-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\window-header\window-header-default-collapsed-right-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\window-header\window-header-default-collapsed-top-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\window-header\window-header-default-collapsed-top-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\window-header\window-header-default-left-corners-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\window-header\window-header-default-left-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\window-header\window-header-default-left-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\window-header\window-header-default-right-corners-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\window-header\window-header-default-right-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\window-header\window-header-default-right-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\window-header\window-header-default-top-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\window-header\window-header-default-top-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\window\window-default-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-classic\images\window\window-default-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\ext-theme-neptune-all-debug.css" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\ext-theme-neptune-all-rtl-debug.css" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\ext-theme-neptune-all-rtl-debug_01.css" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\ext-theme-neptune-all-rtl-debug_02.css" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\ext-theme-neptune-all-rtl.css" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\ext-theme-neptune-all-rtl_01.css" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\ext-theme-neptune-all-rtl_02.css" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\ext-theme-neptune-all.css" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn-group\btn-group-default-framed-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn-group\btn-group-default-framed-notitle-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn-group\btn-group-default-framed-notitle-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn-group\btn-group-default-framed-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-large-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-large-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-large-disabled-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-large-disabled-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-large-disabled-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-large-disabled-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-large-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-large-focus-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-large-focus-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-large-focus-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-large-focus-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-large-over-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-large-over-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-large-over-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-large-over-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-large-pressed-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-large-pressed-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-large-pressed-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-large-pressed-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-large-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-medium-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-medium-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-medium-disabled-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-medium-disabled-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-medium-disabled-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-medium-disabled-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-medium-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-medium-focus-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-medium-focus-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-medium-focus-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-medium-focus-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-medium-over-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-medium-over-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-medium-over-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-medium-over-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-medium-pressed-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-medium-pressed-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-medium-pressed-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-medium-pressed-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-medium-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-small-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-small-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-small-disabled-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-small-disabled-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-small-disabled-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-small-disabled-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-small-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-small-focus-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-small-focus-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-small-focus-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-small-focus-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-small-over-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-small-over-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-small-over-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-small-over-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-small-pressed-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-small-pressed-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-small-pressed-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-small-pressed-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-small-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-large-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-large-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-large-disabled-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-large-disabled-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-large-disabled-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-large-disabled-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-large-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-large-focus-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-large-focus-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-large-focus-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-large-focus-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-large-over-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-large-over-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-large-over-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-large-over-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-large-pressed-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-large-pressed-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-large-pressed-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-large-pressed-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-large-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-medium-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-medium-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-medium-disabled-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-medium-disabled-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-medium-disabled-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-medium-disabled-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-medium-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-medium-focus-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-medium-focus-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-medium-focus-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-medium-focus-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-medium-over-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-medium-over-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-medium-over-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-medium-over-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-medium-pressed-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-medium-pressed-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-medium-pressed-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-medium-pressed-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-medium-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-disabled-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-disabled-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-disabled-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-disabled-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-focus-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-focus-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-focus-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-focus-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-over-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-over-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-over-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-over-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-pressed-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-pressed-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-pressed-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-pressed-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-large-focus-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-large-focus-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-large-focus-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-large-focus-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-large-over-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-large-over-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-large-over-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-large-over-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-large-pressed-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-large-pressed-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-large-pressed-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-large-pressed-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-medium-focus-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-medium-focus-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-medium-focus-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-medium-focus-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-medium-over-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-medium-over-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-medium-over-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-medium-over-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-medium-pressed-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-medium-pressed-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-medium-pressed-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-medium-pressed-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-small-focus-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-small-focus-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-small-focus-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-small-focus-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-small-over-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-small-over-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-small-over-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-small-over-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-small-pressed-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-small-pressed-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-small-pressed-fbg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\btn\btn-plain-toolbar-small-pressed-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-large-arrow-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-large-arrow.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-large-s-arrow-b-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-large-s-arrow-b.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-large-s-arrow-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-large-s-arrow.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-medium-arrow-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-medium-arrow.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-medium-s-arrow-b-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-medium-s-arrow-b.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-medium-s-arrow-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-medium-s-arrow.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-small-arrow-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-small-arrow.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-small-s-arrow-b-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-small-s-arrow-b.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-small-s-arrow-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-small-s-arrow.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-toolbar-large-arrow-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-toolbar-large-arrow.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-toolbar-large-s-arrow-b-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-toolbar-large-s-arrow-b.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-toolbar-large-s-arrow-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-toolbar-large-s-arrow.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-toolbar-medium-arrow-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-toolbar-medium-arrow.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-toolbar-medium-s-arrow-b-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-toolbar-medium-s-arrow-b.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-toolbar-medium-s-arrow-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-toolbar-medium-s-arrow.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-toolbar-small-arrow-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-toolbar-small-arrow.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-toolbar-small-s-arrow-b-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-toolbar-small-s-arrow-b.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-toolbar-small-s-arrow-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\default-toolbar-small-s-arrow.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\plain-toolbar-large-arrow-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\plain-toolbar-large-arrow.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\plain-toolbar-large-s-arrow-b-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\plain-toolbar-large-s-arrow-b.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\plain-toolbar-large-s-arrow-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\plain-toolbar-large-s-arrow.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\plain-toolbar-medium-arrow-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\plain-toolbar-medium-arrow.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\plain-toolbar-medium-s-arrow-b-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\plain-toolbar-medium-s-arrow-b.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\plain-toolbar-medium-s-arrow-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\plain-toolbar-medium-s-arrow.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\plain-toolbar-small-arrow-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\plain-toolbar-small-arrow.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\plain-toolbar-small-s-arrow-b-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\plain-toolbar-small-s-arrow-b.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\plain-toolbar-small-s-arrow-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\button\plain-toolbar-small-s-arrow.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\datepicker\arrow-left.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\datepicker\arrow-right.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\datepicker\month-arrow.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\dd\drop-add.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\dd\drop-no.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\dd\drop-yes.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\editor\tb-sprite.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\fieldset\collapse-tool.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\form\checkbox.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\form\clear-trigger-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\form\clear-trigger.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\form\date-trigger-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\form\date-trigger.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\form\exclamation.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\form\radio.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\form\search-trigger-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\form\search-trigger.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\form\spinner-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\form\spinner.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\form\trigger-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\form\trigger.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid-row-editor-buttons\grid-row-editor-buttons-default-bottom-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid-row-editor-buttons\grid-row-editor-buttons-default-bottom-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid-row-editor-buttons\grid-row-editor-buttons-default-top-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid-row-editor-buttons\grid-row-editor-buttons-default-top-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\col-move-bottom.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\col-move-top.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\columns.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\dd-insert-arrow-left.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\dd-insert-arrow-right.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\dirty-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\dirty.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\drop-no.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\drop-yes.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\group-by.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\group-collapse.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\group-expand-sprite.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\group-expand.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\hd-pop.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\hmenu-asc.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\hmenu-desc.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\hmenu-lock.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\hmenu-unlock.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\loading.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\page-first.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\page-last.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\page-next.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\page-prev.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\pick-button.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\refresh.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\sort_asc.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\grid\sort_desc.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\loadmask\loading.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\menu\checked.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\menu\group-checked.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\menu\menu-item-active-bg.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\menu\menu-parent-left.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\menu\menu-parent.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\menu\scroll-bottom.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\menu\scroll-top.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\menu\unchecked.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-default-framed-bottom-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-default-framed-bottom-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-default-framed-collapsed-bottom-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-default-framed-collapsed-bottom-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-default-framed-collapsed-left-corners-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-default-framed-collapsed-left-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-default-framed-collapsed-left-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-default-framed-collapsed-right-corners-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-default-framed-collapsed-right-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-default-framed-collapsed-right-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-default-framed-collapsed-top-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-default-framed-collapsed-top-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-default-framed-left-corners-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-default-framed-left-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-default-framed-left-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-default-framed-right-corners-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-default-framed-right-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-default-framed-right-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-default-framed-top-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-default-framed-top-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-light-framed-bottom-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-light-framed-bottom-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-light-framed-collapsed-bottom-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-light-framed-collapsed-bottom-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-light-framed-collapsed-left-corners-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-light-framed-collapsed-left-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-light-framed-collapsed-left-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-light-framed-collapsed-right-corners-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-light-framed-collapsed-right-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-light-framed-collapsed-right-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-light-framed-collapsed-top-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-light-framed-collapsed-top-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-light-framed-left-corners-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-light-framed-left-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-light-framed-left-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-light-framed-right-corners-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-light-framed-right-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-light-framed-right-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-light-framed-top-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel-header\panel-header-light-framed-top-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel\panel-default-framed-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel\panel-default-framed-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel\panel-light-framed-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\panel\panel-light-framed-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\shared\icon-error.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\shared\icon-info.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\shared\icon-question.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\shared\icon-warning.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\sizer\e-handle.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\sizer\ne-handle.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\sizer\nw-handle.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\sizer\s-handle.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\sizer\se-handle.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\sizer\sw-handle.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\slider\slider-bg.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\slider\slider-thumb.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\slider\slider-v-bg.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\slider\slider-v-thumb.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab-bar\default-plain-scroll-bottom.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab-bar\default-plain-scroll-left.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab-bar\default-plain-scroll-right.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab-bar\default-plain-scroll-top.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab-bar\default-scroll-bottom.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab-bar\default-scroll-left.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab-bar\default-scroll-right.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab-bar\default-scroll-top.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab\tab-default-bottom-active-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab\tab-default-bottom-active-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab\tab-default-bottom-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab\tab-default-bottom-disabled-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab\tab-default-bottom-disabled-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab\tab-default-bottom-over-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab\tab-default-bottom-over-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab\tab-default-bottom-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab\tab-default-close.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab\tab-default-top-active-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab\tab-default-top-active-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab\tab-default-top-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab\tab-default-top-disabled-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab\tab-default-top-disabled-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab\tab-default-top-over-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab\tab-default-top-over-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tab\tab-default-top-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tip\tip-default-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tip\tip-default-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tip\tip-form-invalid-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tip\tip-form-invalid-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\toolbar\more.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\toolbar\scroll-left.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\toolbar\scroll-right.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tools\tool-sprites-dark.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tools\tool-sprites.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\arrows-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\arrows.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\drop-above.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\drop-add.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\drop-append.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\drop-below.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\drop-between.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\drop-no.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\drop-over.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\drop-under.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\drop-yes.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\elbow-end-minus-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\elbow-end-minus.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\elbow-end-plus-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\elbow-end-plus.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\elbow-end-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\elbow-end.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\elbow-line-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\elbow-line.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\elbow-minus-nl-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\elbow-minus-nl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\elbow-minus-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\elbow-minus.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\elbow-plus-nl-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\elbow-plus-nl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\elbow-plus-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\elbow-plus.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\elbow-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\elbow.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\folder-open-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\folder-open.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\folder-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\folder.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\leaf-rtl.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\leaf.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\tree\loading.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\util\splitter\mini-bottom.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\util\splitter\mini-left.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\util\splitter\mini-right.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\util\splitter\mini-top.png" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\window-header\window-header-default-bottom-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\window-header\window-header-default-bottom-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\window-header\window-header-default-collapsed-bottom-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\window-header\window-header-default-collapsed-bottom-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\window-header\window-header-default-collapsed-left-corners-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\window-header\window-header-default-collapsed-left-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\window-header\window-header-default-collapsed-left-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\window-header\window-header-default-collapsed-right-corners-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\window-header\window-header-default-collapsed-right-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\window-header\window-header-default-collapsed-right-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\window-header\window-header-default-collapsed-top-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\window-header\window-header-default-collapsed-top-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\window-header\window-header-default-left-corners-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\window-header\window-header-default-left-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\window-header\window-header-default-left-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\window-header\window-header-default-right-corners-rtl.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\window-header\window-header-default-right-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\window-header\window-header-default-right-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\window-header\window-header-default-top-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\window-header\window-header-default-top-sides.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\window\window-default-corners.gif" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\images\window\window-default-sides.gif" />
+    <Content Include="Scripts\Ext\resources\images\icons\application_form.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\application_form_add.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\application_form_delete.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\application_form_edit.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\application_form_magnify.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\book_next.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\gps.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\gps01.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\gps02.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\gps10.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\gps9.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\hourglass_add.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\images_send.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\joystick.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\key.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\lightning.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\link.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\link_break.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\lorry_add.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\lorry_flatbed.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\print.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\sealno.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\sealno11.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\sealno2.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\sms1.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\sms2.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\sms3.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\status_online.png" />
+    <Content Include="Scripts\Ext\resources\images\icons\tick.png" />
+    <Content Include="Scripts\Ext\tip\Tip.js" />
+    <Content Include="Scripts\Ext\tip\ToolTip.js" />
+    <Content Include="Scripts\Ext\ux\ActionTextColumn.js" />
+    <Content Include="Scripts\Ext\ux\ComboTree.js" />
+    <Content Include="Scripts\Ext\ux\CommonExt.js" />
+    <Content Include="Scripts\Ext\ux\css\images\border.gif" />
+    <Content Include="Scripts\Ext\ux\css\images\bottom2.gif" />
+    <Content Include="Scripts\Ext\ux\css\images\checked.gif" />
+    <Content Include="Scripts\Ext\ux\css\images\down2.gif" />
+    <Content Include="Scripts\Ext\ux\css\images\elbow-minus-nl.gif" />
+    <Content Include="Scripts\Ext\ux\css\images\elbow-plus-nl.gif" />
+    <Content Include="Scripts\Ext\ux\css\images\left2.gif" />
+    <Content Include="Scripts\Ext\ux\css\images\right2.gif" />
+    <Content Include="Scripts\Ext\ux\css\images\tab-collapsed.gif" />
+    <Content Include="Scripts\Ext\ux\css\images\tab-first.gif" />
+    <Content Include="Scripts\Ext\ux\css\images\tab-last.gif" />
+    <Content Include="Scripts\Ext\ux\css\images\tab-scroller-menu.gif" />
+    <Content Include="Scripts\Ext\ux\css\images\top2.gif" />
+    <Content Include="Scripts\Ext\ux\css\images\unchecked.gif" />
+    <Content Include="Scripts\Ext\ux\css\images\up2.gif" />
+    <Content Include="Scripts\Ext\ux\css\images\x-grouptabs-corners.gif" />
+    <Content Include="Scripts\Ext\ux\css\ItemSelector.css" />
+    <Content Include="Scripts\Ext\ux\css\MultiSelect.css" />
+    <Content Include="Scripts\Ext\ux\DateTimeMenu.js" />
+    <Content Include="Scripts\Ext\ux\datetimepicker.js" />
+    <Content Include="Scripts\Ext\ux\ExtTreeCombo.js" />
+    <Content Include="Scripts\Ext\ux\form\DateTimeField.js" />
+    <Content Include="Scripts\Ext\ux\form\SearchField.js" />
+    <Content Include="Scripts\Ext\ux\form\SearchField2.js" />
+    <Content Include="Scripts\Ext\ux\form\SearchFieldApliUsr.js" />
+    <Content Include="Scripts\Ext\ux\form\TimePickerField.js" />
+    <Content Include="Scripts\Ext\ux\grid.js" />
+    <Content Include="Scripts\Ext\ux\ItemSelector.js" />
+    <Content Include="Scripts\Ext\ux\KeyMap.js" />
+    <Content Include="Scripts\Ext\ux\KeyNav.js" />
+    <Content Include="Scripts\Ext\ux\message\message.js" />
+    <Content Include="Scripts\Ext\ux\message\Notification.js" />
+    <Content Include="Scripts\Ext\ux\MonthField.js" />
+    <Content Include="Scripts\Ext\ux\MultiComboBox.js" />
+    <Content Include="Scripts\Ext\ux\MultiSelect.js" />
+    <Content Include="Scripts\Ext\ux\PortalColumn.js" />
+    <Content Include="Scripts\Ext\ux\PortalDropZone.js" />
+    <Content Include="Scripts\Ext\ux\PortalPanel.js" />
+    <Content Include="Scripts\Ext\ux\Portal\Chart2Portlet.js" />
+    <Content Include="Scripts\Ext\ux\Portal\ChartPortlet.js" />
+    <Content Include="Scripts\Ext\ux\Portal\GridPortlet.js" />
+    <Content Include="Scripts\Ext\ux\Portal\LineChartPortlet.js" />
+    <Content Include="Scripts\Ext\ux\Portal\PieChartPortal.js" />
+    <Content Include="Scripts\Ext\ux\Portal\StackPortlet.js" />
+    <Content Include="Scripts\Ext\ux\Portlet.js" />
+    <Content Include="Scripts\Ext\ux\RowExpander.js" />
+    <Content Include="Scripts\Ext\ux\TabCloseMenu.js" />
+    <Content Include="Scripts\Ext\ux\UploadPanel\icon\add.png" />
+    <Content Include="Scripts\Ext\ux\UploadPanel\icon\check.gif" />
+    <Content Include="Scripts\Ext\ux\UploadPanel\icon\delete.png" />
+    <Content Include="Scripts\Ext\ux\UploadPanel\icon\done.gif" />
+    <Content Include="Scripts\Ext\ux\UploadPanel\icon\down.png" />
+    <Content Include="Scripts\Ext\ux\UploadPanel\icon\failed.gif" />
+    <Content Include="Scripts\Ext\ux\UploadPanel\icon\file-add.gif" />
+    <Content Include="Scripts\Ext\ux\UploadPanel\icon\file-remove.gif" />
+    <Content Include="Scripts\Ext\ux\UploadPanel\icon\file-uploading.gif" />
+    <Content Include="Scripts\Ext\ux\UploadPanel\icon\loading.gif" />
+    <Content Include="Scripts\Ext\ux\UploadPanel\icon\reset.gif" />
+    <Content Include="Scripts\Ext\ux\UploadPanel\icon\trash.png" />
+    <Content Include="Scripts\Ext\ux\UploadPanel\icon\uncheck.gif" />
+    <Content Include="Scripts\Ext\ux\UploadPanel\icon\up.png" />
+    <Content Include="Scripts\Ext\ux\UploadPanel\icon\upload-start.gif" />
+    <Content Include="Scripts\Ext\ux\UploadPanel\icon\upload-stop.gif" />
+    <Content Include="Scripts\Ext\ux\UploadPanel\swfupload.cookies.js" />
+    <Content Include="Scripts\Ext\ux\UploadPanel\swfupload.js" />
+    <Content Include="Scripts\Ext\ux\UploadPanel\swfupload.queue.js" />
+    <Content Include="Scripts\Ext\ux\UploadPanel\swfupload.swf" />
+    <Content Include="Scripts\Frame\application.js" />
+    <Content Include="Scripts\Frame\controller\FrameController.js" />
+    <Content Include="Scripts\Frame\model\MenuModel.js" />
+    <Content Include="Scripts\Frame\model\MessageModel.js" />
+    <Content Include="Scripts\Frame\store\MessageStore.js" />
+    <Content Include="Scripts\Frame\view\Center.js" />
+    <Content Include="Scripts\Frame\view\MenuTree.js" />
+    <Content Include="Scripts\Frame\view\MessageList.js" />
+    <Content Include="Scripts\Frame\view\Viewport.js" />
+    <Content Include="Scripts\JS\ActiveTab.js" />
+    <Content Include="Scripts\JS\common.js" />
+    <Content Include="Scripts\JS\jquery-1.3.2.min.js" />
+    <Content Include="Scripts\BasicData\GeneralParameter\model\CategoryModel.js" />
+    <Content Include="Scripts\BasicData\GeneralParameter\model\GeneralParameterModel.js" />
+    <Content Include="Scripts\SystemSetting\LimitManager\model\LimitModel.js" />
+    <Content Include="Scripts\SystemSetting\LimitManager\model\LimitTypeModel.js" />
+    <Content Include="Scripts\SystemSetting\LimitManager\model\MenuModel.js" />
+    <Content Include="Scripts\SystemSetting\OrganizationManager\model\LocationModel.js" />
+    <Content Include="Scripts\SystemSetting\OrganizationManager\model\OrgListModel.js" />
+    <Content Include="Scripts\SystemSetting\OrganizationManager\model\OrgModel.js" />
+    <Content Include="Scripts\SystemSetting\RoleManager\model\LimitsModel.js" />
+    <Content Include="Scripts\SystemSetting\RoleManager\model\RoleModel.js" />
+    <Content Include="Scripts\SystemSetting\UserManager\model\UserModel.js" />
+    <Content Include="Scripts\BasicData\GeneralParameter\store\BillType.js" />
+    <Content Include="Scripts\BasicData\GeneralParameter\store\BrandName.js" />
+    <Content Include="Scripts\BasicData\GeneralParameter\store\CarriageType.js" />
+    <Content Include="Scripts\BasicData\GeneralParameter\store\CategoryStore.js" />
+    <Content Include="Scripts\BasicData\GeneralParameter\store\DepType.js" />
+    <Content Include="Scripts\BasicData\GeneralParameter\store\FeeItem.js" />
+    <Content Include="Scripts\BasicData\GeneralParameter\store\FeeItemSpec.js" />
+    <Content Include="Scripts\BasicData\GeneralParameter\store\GeneralParameterStore.js" />
+    <Content Include="Scripts\BasicData\GeneralParameter\store\LocationType.js" />
+    <Content Include="Scripts\BasicData\GeneralParameter\store\OwnType.js" />
+    <Content Include="Scripts\BasicData\GeneralParameter\store\PlanStatus.js" />
+    <Content Include="Scripts\BasicData\GeneralParameter\store\Region.js" />
+    <Content Include="Scripts\BasicData\GeneralParameter\store\SpecialFeeType.js" />
+    <Content Include="Scripts\SystemSetting\LimitManager\store\LimitStore.js" />
+    <Content Include="Scripts\SystemSetting\LimitManager\store\LimitTypeStore.js" />
+    <Content Include="Scripts\SystemSetting\LimitManager\store\MenuStore.js" />
+    <Content Include="Scripts\SystemSetting\OrganizationManager\store\FleetOrgStore.js" />
+    <Content Include="Scripts\SystemSetting\OrganizationManager\store\LocationStore.js" />
+    <Content Include="Scripts\SystemSetting\OrganizationManager\store\OrgStore.js" />
+    <Content Include="Scripts\SystemSetting\RoleManager\store\LimitsStore.js" />
+    <Content Include="Scripts\SystemSetting\RoleManager\store\RoleStore.js" />
+    <Content Include="Scripts\SystemSetting\UserManager\store\UserStore.js" />
+    <Content Include="Scripts\BasicData\GeneralParameter\view\CategoryList.js" />
+    <Content Include="Scripts\BasicData\GeneralParameter\view\GeneralParameterList.js" />
+    <Content Include="Scripts\BasicData\GeneralParameter\view\GeneralParameterPanel.js" />
+    <Content Include="Scripts\BasicData\GeneralParameter\view\ParameterAddOrEdit.js" />
+    <Content Include="Scripts\SystemSetting\LimitManager\view\LimitEditWindow.js" />
+    <Content Include="Scripts\SystemSetting\LimitManager\view\LimitRightMenu.js" />
+    <Content Include="Scripts\SystemSetting\LimitManager\view\LimitTree.js" />
+    <Content Include="Scripts\SystemSetting\LimitManager\view\LimitWindow.js" />
+    <Content Include="Scripts\SystemSetting\LimitManager\view\MenuList.js" />
+    <Content Include="Scripts\SystemSetting\OrganizationManager\view\LocationList.js" />
+    <Content Include="Scripts\SystemSetting\OrganizationManager\view\LocationWindow.js" />
+    <Content Include="Scripts\SystemSetting\OrganizationManager\view\OrgEditWindow.js" />
+    <Content Include="Scripts\SystemSetting\OrganizationManager\view\OrgRightMenu.js" />
+    <Content Include="Scripts\SystemSetting\OrganizationManager\view\OrgTree.js" />
+    <Content Include="Scripts\SystemSetting\OrganizationManager\view\OrgWindow.js" />
+    <Content Include="Scripts\SystemSetting\OrganizationManager\view\TreeWindow.js" />
+    <Content Include="Scripts\SystemSetting\RoleManager\view\LimitsTree.js" />
+    <Content Include="Scripts\SystemSetting\RoleManager\view\LimitsWindow.js" />
+    <Content Include="Scripts\SystemSetting\RoleManager\view\RoleList.js" />
+    <Content Include="Scripts\SystemSetting\RoleManager\view\RoleWindow.js" />
+    <Content Include="Scripts\SystemSetting\UserManager\view\UserEdit.js" />
+    <Content Include="Scripts\SystemSetting\UserManager\view\UserList.js" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Home\Main.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="Scripts\Ext\resources\ext-theme-neptune\Readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ERP.BLL\ERP.BLL.csproj">
+      <Project>{1b60ecc9-c4be-420a-a554-99f74054422d}</Project>
+      <Name>ERP.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ERP.Model\ERP.Model.csproj">
+      <Project>{95858dc0-a615-468a-8073-fa608af70f21}</Project>
+      <Name>ERP.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ERP.Utility\ERP.Utility.csproj">
+      <Project>{beb83f3d-a043-4358-8fc6-7ad2d3bd689d}</Project>
+      <Name>ERP.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55440</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55440/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
